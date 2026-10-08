@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oishi · MCP 기반 철도 운영·유지보수 매뉴얼 자동화</title>
+  <meta name="description" content="Oishi는 MCP(Model Context Protocol)를 이용해 철도 운영·유지보수 매뉴얼, 정비 이력, 점검 데이터를 AI와 연결하고 문서 작업을 자동화합니다.">
+  <meta property="og:title" content="Oishi · MCP 기반 철도 운영·유지보수 매뉴얼 자동화">
+  <meta property="og:description" content="매뉴얼 자동 생성·갱신, 점검/정비 절차 검색, 작업지시서 자동화, 이력 관리">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b1f3a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1f3a'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%2338bdf8' font-family='Arial' font-weight='700'%3EO%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav" id="top">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="Oishi 홈">
+        <span class="brand-mark" aria-hidden="true">O</span>
+        <span class="brand-name">Oishi</span>
+      </a>
+      <nav aria-label="주요 메뉴">
+        <ul class="nav-links">
+          <li><a href="#overview">서비스 소개</a></li>
+          <li><a href="#features">주요 기능</a></li>
+          <li><a href="#how">작동 방식</a></li>
+          <li><a href="#contact" class="nav-cta">문의하기</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <svg class="rails" viewBox="0 0 1200 400" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="rg" x1="0" x2="1">
+              <stop offset="0" stop-color="#38bdf8" stop-opacity="0"/>
+              <stop offset=".5" stop-color="#38bdf8" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 300 C 300 260, 600 340, 1200 250" stroke="url(#rg)" stroke-width="2" fill="none"/>
+          <path d="M0 330 C 300 290, 600 370, 1200 280" stroke="url(#rg)" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <div class="container hero-inner">
+        <p class="eyebrow">MCP · Model Context Protocol</p>
+        <h1 class="hero-title">Oishi</h1>
+        <p class="hero-tagline">MCP(Model Context Protocol)를 이용한<br class="br-sm"> 철도 운영·유지보수 매뉴얼 자동화</p>
+        <p class="hero-sub">흩어진 매뉴얼, 정비 이력, 점검 데이터를 AI와 안전하게 연결하여<br class="br-lg"> 현장에 필요한 문서와 절차를 빠르고 정확하게 제공합니다.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">도입 문의</a>
+          <a href="#overview" class="btn btn-ghost">서비스 살펴보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="section">
+      <div class="container two-col">
+        <div>
+          <p class="section-label">서비스 소개</p>
+          <h2 class="section-title">현장의 지식을 AI가 이해할 수 있는 형태로 연결합니다</h2>
+          <p class="lead">MCP는 AI 모델이 외부 데이터와 도구에 표준화된 방식으로 접근할 수 있게 해 주는 개방형 프로토콜입니다. Oishi는 MCP를 활용해 철도 운영·유지보수 분야의 문서와 데이터를 AI와 연결하고, 반복적인 문서 작업을 자동화합니다.</p>
+          <p class="muted">필요한 정보를 찾기 위해 여러 시스템과 문서를 오가는 대신, 질문 하나로 관련 절차와 이력을 확인하고 최신 상태의 문서를 받아볼 수 있도록 돕습니다.</p>
+        </div>
+        <div class="connect-card" aria-label="MCP 연결 구조">
+          <div class="hub">
+            <span class="hub-dot" aria-hidden="true"></span>
+            <strong>AI 어시스턴트</strong>
+            <small>MCP 클라이언트</small>
+          </div>
+          <div class="hub-line" aria-hidden="true"></div>
+          <div class="hub mcp">
+            <strong>Oishi MCP 서버</strong>
+            <small>권한·맥락 관리</small>
+          </div>
+          <div class="sources">
+            <div class="source"><span class="ico" aria-hidden="true">📘</span>운영·유지보수 매뉴얼</div>
+            <div class="source"><span class="ico" aria-hidden="true">🛠️</span>정비 기록</div>
+            <div class="source"><span class="ico" aria-hidden="true">📋</span>점검 데이터</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section section-alt">
+      <div class="container">
+        <p class="section-label center">주요 기능</p>
+        <h2 class="section-title center">문서 작업의 처음부터 끝까지</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h8M9 17h5"/></svg>
+            </div>
+            <h3>매뉴얼 자동 생성·갱신</h3>
+            <p>기존 문서와 변경 사항을 바탕으로 매뉴얼 초안을 생성하고, 개정 내용을 반영해 최신 상태를 유지하도록 돕습니다.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            </div>
+            <h3>점검·정비 절차 검색</h3>
+            <p>자연어 질문으로 설비별 점검 항목과 정비 절차를 찾고, 근거가 되는 원문 위치를 함께 확인할 수 있습니다.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v3h6V3"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3>작업지시서 자동화</h3>
+            <p>점검 결과와 관련 절차를 연결하여 작업지시서 초안을 자동으로 작성하고, 필요한 항목을 빠짐없이 채우도록 지원합니다.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </div>
+            <h3>이력 관리</h3>
+            <p>정비·점검 이력과 문서 개정 이력을 한곳에서 추적하여, 언제 무엇이 바뀌었는지 쉽게 확인할 수 있습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section">
+      <div class="container">
+        <p class="section-label center">작동 방식</p>
+        <h2 class="section-title center">네 단계로 이어지는 간단한 흐름</h2>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">01</span>
+            <h3>데이터 연결</h3>
+            <p>매뉴얼, 정비 기록, 점검 데이터 등 기존 자료를 MCP 서버에 연결합니다.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">02</span>
+            <h3>맥락 구성</h3>
+            <p>문서 구조와 설비 정보를 정리해 AI가 정확한 맥락을 참조할 수 있도록 구성합니다.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">03</span>
+            <h3>질의·자동화</h3>
+            <p>현장 담당자의 질문에 답하고, 매뉴얼·작업지시서 등 필요한 문서를 생성합니다.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">04</span>
+            <h3>검토·반영</h3>
+            <p>담당자가 결과를 검토·승인하면 문서와 이력에 반영되어 지속적으로 개선됩니다.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container contact-inner">
+        <div>
+          <p class="section-label light">문의하기</p>
+          <h2 class="section-title light">도입 상담과 문의를 기다립니다</h2>
+          <p class="contact-text">서비스 소개, 적용 방안 등 궁금한 점이 있으시면 이메일로 편하게 연락해 주세요.</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-row">
+            <span class="contact-label">이메일</span>
+            <a class="contact-value" href="mailto:psc5800@oishirail.dpdns.org">psc5800@oishirail.dpdns.org</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">주소</span>
+            <address class="contact-value">부산광역시 서구 서대신동 대신푸르지오2차</address>
+          </div>
+          <a class="btn btn-primary btn-block" href="mailto:psc5800@oishirail.dpdns.org?subject=%5BOishi%5D%20%EB%AC%B8%EC%9D%98">이메일 보내기</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="brand small"><span class="brand-mark" aria-hidden="true">O</span><span class="brand-name">Oishi</span></span>
+      <p>© <span id="year">2026</span> Oishi. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
